@@ -101,7 +101,7 @@ https://www.strava.com/settings -->
                 <kilometers>50.3</kilometers>
             </shoe>
             
-            <shoe shoe_id="04" shoe_status="available">
+            <shoe shoe_id="04" shoe_status="retired">
                 <name>ASICS GT-2000 2</name>
                 <kilometers>731.2</kilometers>
             </shoe>

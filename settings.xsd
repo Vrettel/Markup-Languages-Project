@@ -3,5 +3,74 @@
 This XML Schema File is made in order to validate the XML file "settings.xml".-->
 
 <xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
-
+    
+    <xs:complexType name="photo">
+        <xs:attribute name="pid" type="xs:ID"/>
+        <xs:attribute name="size50">
+            <xs:simpleType>
+                <xs:restriction base="xs:decimal">
+                    <xs:minExclusive value="0.0"/>
+                    <xs:maxInclusive value="50.0"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:attribute>
+    </xs:complexType>
+    <xs:complexType name="current_photo">
+        <xs:element name="photo" type="photo" minOccurs="0" maxOccurs="1"/>
+    </xs:complexType>
+    <xs:complexType name="other_photos">
+        <xs:element name="photo" type="photo" minOccurs="0" maxOccurs="1000"/>
+    </xs:complexType>
+    <xs:complexType name="photos">
+        <xs:sequence>
+            <xs:element name = "current_photo" type="current_photo" minOccurs="1" maxOccurs="1"/>
+            <xs:element name = "other_photos" type="other_photos" minOccurs="1" maxOccurs="1"/>
+        </xs:sequence> 
+    </xs:complexType>
+    <xs:simpleType name="month">
+        <xs:restriction base="xs:integer">
+                    <xs:minExclusive value="0"/>
+                    <xs:maxInclusive value="12"/>
+       </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="day">
+        <xs:restriction base="xs:integer">
+                    <xs:minExclusive value="0"/>
+                    <xs:maxInclusive value="31"/>
+       </xs:restriction>     
+    </xs:simpleType>
+    <xs:complexType name="birthday">
+        <xs:sequence>
+            <xs:element name="year" type="xs:integer"/>
+            <xs:element name="month" type="month"/>
+            <xs:element name="day" type="day"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:simpleType name="gender">
+        <xs:restriction base="xs:string">
+                    <xs:enumeration value="Male"/>
+                    <xs:enumeration value="Female"/>
+        </xs:restriction> 
+    </xs:simpleType>
+    <xs:complexType name="location_from">
+        <xs:sequence>
+            <xs:element name="country" type="xs:string"/>
+            <xs:element name="city" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="my_profile">
+        <xs:sequence>
+            <xs:element name="photos" type="photos"/>
+            <xs:element name="name" type="xs:string"/>
+            <xs:element name="birthday" type="birthday"/>
+            <xs:element name="gender" type="gender"/>
+            <xs:element name="location" type="location_from"/>
+            <xs:element name="weight" type="xs:integer"/>
+            <xs:element name="url" type="xs:string"/>
+            <xs:element name="bio" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    
+    
 </xs:schema>

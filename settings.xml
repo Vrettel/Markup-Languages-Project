@@ -6,14 +6,14 @@ https://www.strava.com/settings -->
     <my_profile>
         <photos>
             <current_photo>
-                <photo pid="cph" size="49"></photo> <!-- size <=50 -->
+                <photo pid="cph" size50="49"></photo> <!-- size <=50 -->
              </current_photo>
             <other_photos>
-                <photo pid="ph1" size="35"></photo>
-                <photo pid="ph2" size="36"></photo>
-                <photo pid="ph3" size="48"></photo>
-                <photo pid="ph4" size="29"></photo>
-                <photo pid="ph5" size="44"></photo>
+                <photo pid="ph1" size50="35"></photo>
+                <photo pid="ph2" size50="36"></photo>
+                <photo pid="ph3" size50="48"></photo>
+                <photo pid="ph4" size50="29"></photo>
+                <photo pid="ph5" size50="44"></photo>
             </other_photos>     
         </photos>
         <name>Gio Vrettel</name>
@@ -24,8 +24,8 @@ https://www.strava.com/settings -->
         </birthday>
         <gender>Male</gender> <!--Choice(Male|Female)-->
         <location>
-            <country></country>
-            <city></city>
+            <country>Czech Republic</country>
+            <city>Prague</city>
         </location>
         <weight>70</weight>
         <url> https://www.strava.com/athletes/vrettel</url>
@@ -142,27 +142,27 @@ https://www.strava.com/settings -->
     <social_connections>
         <service service_id ="s1" servce_status="connected"> <!--Choice(connected|disconnected)-->
             <name>Garmin Connect</name>
-            <icon icid="01" size="9"></icon><!-- size <=10 -->
+            <icon icid="01" size10="9"></icon><!-- size <=10 -->
         </service>
         <service service_id ="s2" servce_status="connected">
             <name>Facebook</name>
-            <icon icid="02" size="6"></icon>
+            <icon icid="02" size10="6"></icon>
         </service>
         <service service_id ="s3" servce_status="connected">
             <name>Google+</name>
-            <icon icid="03" size="10"></icon>
+            <icon icid="03" size10="10"></icon>
         </service>
         <service service_id ="s4" servce_status="disconnected">
             <name>Instagram</name>
-            <icon icid="04" size="8"></icon>
+            <icon icid="04" size10="8"></icon>
         </service>
         <service service_id ="s5" servce_status="disconnected">
             <name>Jawbone UP</name>
-            <icon icid="05" size="5"></icon>
+            <icon icid="05" size10="5"></icon>
         </service>
         <service service_id ="s6" servce_status="disconnected">
             <name>MyFitnessPal</name>
-            <icon icid="06" size="9"></icon>
+            <icon icid="06" size10="9"></icon>
         </service>
     </social_connections>
 </settings>

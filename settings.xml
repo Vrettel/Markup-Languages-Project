@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Vrettos Georgios 
+This XML is based on the settings of a web application called "Strava". 
+https://www.strava.com/settings -->
+<settings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="settings.xsd">
+    <my_profile>
+        <photos>
+            <current_photo>
+                <photo pid="cph" size="49"></photo> <!-- size <=50 -->
+             </current_photo>
+            <other_photos>
+                <photo pid="ph1" size="35"></photo>
+                <photo pid="ph2" size="36"></photo>
+                <photo pid="ph3" size="48"></photo>
+                <photo pid="ph4" size="29"></photo>
+                <photo pid="ph5" size="44"></photo>
+            </other_photos>     
+        </photos>
+        <name>Gio Vrettel</name>
+        <birthday>
+            <year>1993</year>
+            <month>12</month>
+            <day>3</day>
+        </birthday>
+        <gender>Male</gender> <!--Choice(Male|Female)-->
+        <location>
+            <country></country>
+            <city></city>
+        </location>
+        <weight>70</weight>
+        <url> https://www.strava.com/athletes/vrettel</url>
+        <bio>Some things about me...</bio>
+    </my_profile>
+    <my_account>
+        <member_since>
+            <year>2013</year>
+            <month>11</month>
+            <day>19</day>
+        </member_since>
+        <membership_status>Free</membership_status> <!--Choice(Free|Premium)-->
+    </my_account>
+    <display_preferences>
+        <units> <!--Choice(Kilometers and Kilograms|Miles and Pounds)-->
+        Kilometers and Kilograms
+        </units>
+        <default_sport>Cycling</default_sport>
+        <default_highlight_image>Photo</default_highlight_image> <!--Choice(Photo|Map)-->
+    </display_preferences>
+    <privacy>
+        <enhaced_privacy>Off</enhaced_privacy><!--Choice(On|Off)-->
+        <flyby_visibility>Everyone</flyby_visibility><!--Choice(Everyone|Nobody)-->
+        <log_visibility>Nobody</log_visibility><!--Choice(Everyone|Nobody)-->
+        <hidden_locations>
+            <location lid = "l01">
+                <street>Kamycka</street>
+                <number>1230</number>
+                <zip>16521</zip>
+            </location>
+        </hidden_locations>
+        <private_activities>Off</private_activities> <!--Choice(On|Off)-->
+        <hidden_from_leaderboards>Off</hidden_from_leaderboards> <!--Choice(On|Off)-->
+        <data_usage>On</data_usage><!--Choice(On|Off)-->
+    </privacy>
+    <email_notifications>
+        <club_email>On</club_email><!--Choice(On|Off)-->
+        <social_email>On</social_email><!--Choice(On|Off)-->
+        <segment_email>On</segment_email><!--Choice(On|Off)-->
+        <newsletter>Off</newsletter><!--Choice(On|Off)-->
+        <language>English</language>
+    </email_notifications>
+    <my_gear>
+        <my_bikes>
+            <bike bike_id="01" bike_status ="default"> <!--Choice(default|available|retired)-->
+                <name>Canyon Ultimate AL 8.0</name>
+                <kilometers>10,240</kilometers>
+            </bike>
+            <bike bike_id="02" bike_status ="available">
+                <name>Ideal Ergomax 02 2010</name>
+                <kilometers>566.7</kilometers>
+            </bike>
+            <bike bike_id="03" bike_status ="available">
+                <name>Ideal Ocean</name>
+                <kilometers>11.3</kilometers>
+            </bike>
+            <bike bike_id="04" bike_status ="retired">
+                <name>John's Bike</name>
+                <kilometers>20.1</kilometers>
+            </bike>
+        </my_bikes>
+        <my_shoes>
+            <shoe shoe_id="01" shoe_status="default"><!--Choice(default|available|retired)-->
+                <name>ASICS Gel-Nimbus 18</name>
+                <kilometers>460.6</kilometers>
+            </shoe>
+            <shoe shoe_id="02" shoe_status="available">
+                <name>adidas Vanaka</name>
+                <kilometers>11.4</kilometers>
+            </shoe>
+            <shoe shoe_id="03" shoe_status="available">
+                <name>On CloudRacer</name>
+                <kilometers>50.3</kilometers>
+            </shoe>
+            
+            <shoe shoe_id="04" shoe_status="available">
+                <name>ASICS GT-2000 2</name>
+                <kilometers>731.2</kilometers>
+            </shoe>
+            
+            <shoe shoe_id="05" shoe_status="retired">
+                <name>Karrimor Tempo</name>
+                <kilometers>20.3</kilometers>
+            </shoe>
+            
+            <shoe shoe_id="06" shoe_status="retired">
+                <name>Karrimor Tempo Dual</name>
+                <kilometers>30.8</kilometers>
+            </shoe>
+            <shoe shoe_id="07" shoe_status="retired">
+                <name>Karrimor Duma</name>
+                <kilometers>14.8</kilometers>
+            </shoe>            
+        </my_shoes>
+        
+    </my_gear> 
+    <my_apps>
+        <app app_id="01" access="granted"> <!--Choice(granted|denied)-->
+            <name>Your 2016 Strava Story</name>
+        </app>
+        <app app_id="02" access="granted">
+            <name>Kom Club</name>
+        </app>
+        <app app_id="03" access="granted">
+            <name>Eurosport-tour</name>
+        </app>
+        <app app_id="04" access="denied">
+            <name>Strava Labs</name>
+        </app>
+        <app app_id="05" access="denied">
+            <name>My 2015 Adventure</name>
+        </app>
+    </my_apps>
+    <social_connections>
+        <service service_id ="s1" servce_status="connected"> <!--Choice(connected|disconnected)-->
+            <name>Garmin Connect</name>
+            <icon icid="01" size="9"></icon><!-- size <=10 -->
+        </service>
+        <service service_id ="s2" servce_status="connected">
+            <name>Facebook</name>
+            <icon icid="02" size="6"></icon>
+        </service>
+        <service service_id ="s3" servce_status="connected">
+            <name>Google+</name>
+            <icon icid="03" size="10"></icon>
+        </service>
+        <service service_id ="s4" servce_status="disconnected">
+            <name>Instagram</name>
+            <icon icid="04" size="8"></icon>
+        </service>
+        <service service_id ="s5" servce_status="disconnected">
+            <name>Jawbone UP</name>
+            <icon icid="05" size="5"></icon>
+        </service>
+        <service service_id ="s6" servce_status="disconnected">
+            <name>MyFitnessPal</name>
+            <icon icid="06" size="9"></icon>
+        </service>
+    </social_connections>
+</settings>

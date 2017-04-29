@@ -70,7 +70,85 @@ This XML Schema File is made in order to validate the XML file "settings.xml".--
             <xs:element name="bio" type="xs:string"/>
         </xs:sequence>
     </xs:complexType>
-    
-    
-    
+    <xs:simpleType name="membership_status">
+        <xs:restriction base="xs:string">
+                    <xs:enumeration value="Free"/>
+                    <xs:enumeration value="Premium"/>
+        </xs:restriction> 
+    </xs:simpleType>
+    <xs:complexType name="member_since">
+        <xs:sequence>
+            <xs:element name="year" type="xs:integer"/>
+            <xs:element name="month" type="month"/>
+            <xs:element name="day" type="day"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="my_account">
+        <xs:sequence>
+            <xs:element name="member_since" type="member_since"/>
+            <xs:element name="membership_status" type="membership_status"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:simpleType name="units">
+        <xs:restriction base="xs:string">
+                    <xs:enumeration value="Kilometers and Kilograms"/>
+                    <xs:enumeration value="Miles and Pounds"/>
+        </xs:restriction> 
+    </xs:simpleType>
+    <xs:simpleType name="default_highlight_image">
+        <xs:restriction base="xs:string">
+                    <xs:enumeration value="Photo"/>
+                    <xs:enumeration value="Map"/>
+        </xs:restriction> 
+    </xs:simpleType>
+    <xs:complexType name="display_preferences">
+        <xs:sequence>
+            <xs:element name="units" type="units"/>
+            <xs:element name="default_sport" type="xs:string"/>
+            <xs:element name="default_highlight_image" type="default_highlight_image"/>       
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="location_hid">
+        <xs:sequence>
+            <xs:element name="street" type="xs:string"/>
+            <xs:element name="number" type="xs:integer"/>
+            <xs:element name="zip" type="xs:integer"/>
+        </xs:sequence>
+        <xs:attribute name="lid" type="xs:ID"/>
+    </xs:complexType>
+    <xs:complexType name="hidden_loctions">
+        <xs:element name="location" type="location_hid" minOccurs="0" maxOccurs="5"/>
+    </xs:complexType>
+    <xs:simpleType name="on_off">
+        <xs:restriction base="xs:string">
+                    <xs:enumeration value="On"/>
+                    <xs:enumeration value="Off"/>
+        </xs:restriction> 
+    </xs:simpleType>
+    <xs:simpleType name="visibility">
+        <xs:restriction base="xs:string">
+                    <xs:enumeration value="Everyone"/>
+                    <xs:enumeration value="Nobody"/>
+        </xs:restriction> 
+    </xs:simpleType>
+    <xs:complexType name="privacy">
+        <xs:sequence>
+            <xs:element name="enhaced_privacy" type="on_off"/>
+            <xs:element name="flyby_visibility" type="visibility"/>
+            <xs:element name="log_visibility" type="visibility"/>
+            <xs:element name="hidden_loctions" type="hidden_loctions"/>
+            <xs:element name="private_activities" type="on_off"/>   
+            <xs:element name="hidden_from_leaderboards" type="on_off"/>   
+            <xs:element name="data_usage" type="on_off"/>          
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="email_notifications">
+        <xs:sequence>
+            <xs:element name="club_email" type="on_off"/>
+            <xs:element name="social_email" type="on_off"/>
+            <xs:element name="segment_email" type="on_off"/>
+            <xs:element name="newsletter" type="on_off"/>
+            <xs:element name="language" type="xs:string"/>            
+        </xs:sequence> 
+    </xs:complexType>
 </xs:schema>

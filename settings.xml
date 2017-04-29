@@ -40,9 +40,7 @@ https://www.strava.com/settings -->
         <membership_status>Free</membership_status> <!--Choice(Free|Premium)-->
     </my_account>
     <display_preferences>
-        <units> <!--Choice(Kilometers and Kilograms|Miles and Pounds)-->
-        Kilometers and Kilograms
-        </units>
+        <units>Kilometers and Kilograms</units> <!--Choice(Kilometers and Kilograms|Miles and Pounds)-->
         <default_sport>Cycling</default_sport>
         <default_highlight_image>Photo</default_highlight_image> <!--Choice(Photo|Map)-->
     </display_preferences>
@@ -70,99 +68,98 @@ https://www.strava.com/settings -->
     </email_notifications>
     <my_gear>
         <my_bikes>
-            <bike bike_id="01" bike_status ="default"> <!--Choice(default|available|retired)-->
+            <bike bike_id="b01" bike_status ="default"> <!--Choice(default|available|retired)-->
                 <name>Canyon Ultimate AL 8.0</name>
-                <kilometers>10,240</kilometers>
+                <kilometers>10240</kilometers>
             </bike>
-            <bike bike_id="02" bike_status ="available">
+            <bike bike_id="b02" bike_status ="available">
                 <name>Ideal Ergomax 02 2010</name>
                 <kilometers>566.7</kilometers>
             </bike>
-            <bike bike_id="03" bike_status ="available">
+            <bike bike_id="b03" bike_status ="available">
                 <name>Ideal Ocean</name>
                 <kilometers>11.3</kilometers>
             </bike>
-            <bike bike_id="04" bike_status ="retired">
+            <bike bike_id="b04" bike_status ="retired">
                 <name>John's Bike</name>
                 <kilometers>20.1</kilometers>
             </bike>
         </my_bikes>
         <my_shoes>
-            <shoe shoe_id="01" shoe_status="default"><!--Choice(default|available|retired)-->
+            <shoe shoe_id="s01" shoe_status="default"><!--Choice(default|available|retired)-->
                 <name>ASICS Gel-Nimbus 18</name>
                 <kilometers>460.6</kilometers>
             </shoe>
-            <shoe shoe_id="02" shoe_status="available">
+            <shoe shoe_id="s02" shoe_status="available">
                 <name>adidas Vanaka</name>
                 <kilometers>11.4</kilometers>
             </shoe>
-            <shoe shoe_id="03" shoe_status="available">
+            <shoe shoe_id="s03" shoe_status="available">
                 <name>On CloudRacer</name>
                 <kilometers>50.3</kilometers>
             </shoe>
             
-            <shoe shoe_id="04" shoe_status="retired">
+            <shoe shoe_id="s04" shoe_status="retired">
                 <name>ASICS GT-2000 2</name>
                 <kilometers>731.2</kilometers>
             </shoe>
             
-            <shoe shoe_id="05" shoe_status="retired">
+            <shoe shoe_id="s05" shoe_status="retired">
                 <name>Karrimor Tempo</name>
                 <kilometers>20.3</kilometers>
             </shoe>
             
-            <shoe shoe_id="06" shoe_status="retired">
+            <shoe shoe_id="s06" shoe_status="retired">
                 <name>Karrimor Tempo Dual</name>
                 <kilometers>30.8</kilometers>
             </shoe>
-            <shoe shoe_id="07" shoe_status="retired">
+            <shoe shoe_id="s07" shoe_status="retired">
                 <name>Karrimor Duma</name>
                 <kilometers>14.8</kilometers>
             </shoe>            
-        </my_shoes>
-        
+        </my_shoes>       
     </my_gear> 
     <my_apps>
-        <app app_id="01" access="granted"> <!--Choice(granted|denied)-->
+        <app app_id="a01" access="granted"> <!--Choice(granted|denied)-->
             <name>Your 2016 Strava Story</name>
         </app>
-        <app app_id="02" access="granted">
+        <app app_id="a02" access="granted">
             <name>Kom Club</name>
         </app>
-        <app app_id="03" access="granted">
+        <app app_id="a03" access="granted">
             <name>Eurosport-tour</name>
         </app>
-        <app app_id="04" access="denied">
+        <app app_id="a04" access="denied">
             <name>Strava Labs</name>
         </app>
-        <app app_id="05" access="denied">
+        <app app_id="a05" access="denied">
             <name>My 2015 Adventure</name>
         </app>
     </my_apps>
     <social_connections>
-        <service service_id ="s1" servce_status="connected"> <!--Choice(connected|disconnected)-->
+        <service service_id ="se1" service_status="connected"> <!--Choice(connected|disconnected)-->
             <name>Garmin Connect</name>
-            <icon icid="01" size10="9"></icon><!-- size <=10 -->
+            <icon icid="ic01" size10="9"></icon><!-- size <=10 -->
         </service>
-        <service service_id ="s2" servce_status="connected">
+        <service service_id ="se2" service_status="connected">
             <name>Facebook</name>
-            <icon icid="02" size10="6"></icon>
+            <icon icid="ic02" size10="6"></icon>
         </service>
-        <service service_id ="s3" servce_status="connected">
+        <service service_id ="se3" service_status="connected">
             <name>Google+</name>
-            <icon icid="03" size10="10"></icon>
+            <icon icid="ic03" size10="10"></icon>
         </service>
-        <service service_id ="s4" servce_status="disconnected">
+        <service service_id ="se4" service_status="disconnected">
             <name>Instagram</name>
-            <icon icid="04" size10="8"></icon>
+            <icon icid="ic04" size10="8"></icon>
         </service>
-        <service service_id ="s5" servce_status="disconnected">
+        <service service_id ="se5" service_status="disconnected">
             <name>Jawbone UP</name>
-            <icon icid="05" size10="5"></icon>
+            <icon icid="ic05" size10="5"></icon>
         </service>
-        <service service_id ="s6" servce_status="disconnected">
+        <service service_id ="se6" service_status="disconnected">
             <name>MyFitnessPal</name>
-            <icon icid="06" size10="9"></icon>
+            <icon icid="ic06" size10="9"></icon>
         </service>
     </social_connections>
 </settings>

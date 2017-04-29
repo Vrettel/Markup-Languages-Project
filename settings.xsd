@@ -16,15 +16,19 @@ This XML Schema File is made in order to validate the XML file "settings.xml".--
         </xs:attribute>
     </xs:complexType>
     <xs:complexType name="current_photo">
-        <xs:element name="photo" type="photo" minOccurs="0" maxOccurs="1"/>
+        <xs:sequence>
+            <xs:element name="photo" type="photo" maxOccurs="1"/>
+        </xs:sequence>
     </xs:complexType>
     <xs:complexType name="other_photos">
-        <xs:element name="photo" type="photo" minOccurs="0" maxOccurs="1000"/>
+        <xs:sequence>
+            <xs:element name="photo" type="photo" maxOccurs="1000"/>
+        </xs:sequence>
     </xs:complexType>
     <xs:complexType name="photos">
         <xs:sequence>
-            <xs:element name = "current_photo" type="current_photo" minOccurs="1" maxOccurs="1"/>
-            <xs:element name = "other_photos" type="other_photos" minOccurs="1" maxOccurs="1"/>
+            <xs:element name = "current_photo" type="current_photo"/>
+            <xs:element name = "other_photos" type="other_photos"/>
         </xs:sequence> 
     </xs:complexType>
     <xs:simpleType name="month">
@@ -116,8 +120,10 @@ This XML Schema File is made in order to validate the XML file "settings.xml".--
         </xs:sequence>
         <xs:attribute name="lid" type="xs:ID"/>
     </xs:complexType>
-    <xs:complexType name="hidden_loctions">
-        <xs:element name="location" type="location_hid" minOccurs="0" maxOccurs="5"/>
+    <xs:complexType name="hidden_locations">
+        <xs:sequence>
+            <xs:element name="location" type="location_hid" maxOccurs="5"/>
+        </xs:sequence>
     </xs:complexType>
     <xs:simpleType name="on_off">
         <xs:restriction base="xs:string">
@@ -136,7 +142,7 @@ This XML Schema File is made in order to validate the XML file "settings.xml".--
             <xs:element name="enhaced_privacy" type="on_off"/>
             <xs:element name="flyby_visibility" type="visibility"/>
             <xs:element name="log_visibility" type="visibility"/>
-            <xs:element name="hidden_loctions" type="hidden_loctions"/>
+            <xs:element name="hidden_locations" type="hidden_locations"/>
             <xs:element name="private_activities" type="on_off"/>   
             <xs:element name="hidden_from_leaderboards" type="on_off"/>   
             <xs:element name="data_usage" type="on_off"/>          
@@ -151,4 +157,115 @@ This XML Schema File is made in order to validate the XML file "settings.xml".--
             <xs:element name="language" type="xs:string"/>            
         </xs:sequence> 
     </xs:complexType>
+    <xs:complexType name="bike">
+        <xs:sequence>
+            <xs:element name="name" type="xs:string"/>
+            <xs:element name="kilometers" type="xs:double"/>
+        </xs:sequence>
+        <xs:attribute name="bike_id" type="xs:ID"/>
+        <xs:attribute name="bike_status">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:enumeration value="default"/>
+                            <xs:enumeration value="available"/>
+                            <xs:enumeration value="retired"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+        </xs:attribute>
+    </xs:complexType>
+    <xs:complexType name="my_bikes">
+        <xs:sequence>
+            <xs:element name= "bike" type="bike" maxOccurs="20"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="shoe">
+        <xs:sequence>
+            <xs:element name="name" type="xs:string"/>
+            <xs:element name="kilometers" type="xs:double"/>
+        </xs:sequence>
+        <xs:attribute name="shoe_id" type="xs:ID"/>
+        <xs:attribute name="shoe_status">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:enumeration value="default"/>
+                            <xs:enumeration value="available"/>
+                            <xs:enumeration value="retired"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+        </xs:attribute>
+    </xs:complexType>
+    <xs:complexType name="my_shoes">
+        <xs:sequence>
+            <xs:element name= "shoe" type="shoe" maxOccurs="20"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="my_gear">
+        <xs:sequence>
+            <xs:element name="my_bikes" type="my_bikes"/>
+            <xs:element name="my_shoes" type="my_shoes"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="app">
+        <xs:sequence>
+        <xs:element name="name" type="xs:string"/>
+        </xs:sequence>
+        <xs:attribute name="app_id" type="xs:ID"/>
+        <xs:attribute name="access">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:enumeration value="granted"/>
+                            <xs:enumeration value="denied"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+        </xs:attribute>
+    </xs:complexType>
+    <xs:complexType name="my_apps">
+        <xs:sequence>
+            <xs:element name= "app" type="app" maxOccurs="30"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="icon">
+        <xs:attribute name="icid" type="xs:ID"/>
+        <xs:attribute name="size10">
+            <xs:simpleType>
+                <xs:restriction base="xs:decimal">
+                    <xs:minExclusive value="0.0"/>
+                    <xs:maxInclusive value="10.0"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:attribute>
+    </xs:complexType>
+    <xs:complexType name="service">
+        <xs:sequence>
+            <xs:element name="name" type="xs:string"/>
+            <xs:element name="icon" type="icon"/>
+        </xs:sequence>
+        <xs:attribute name="service_id" type="xs:ID"/>
+        <xs:attribute name="service_status">
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:enumeration value="connected"/>
+                    <xs:enumeration value="disconnected"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:attribute>
+    </xs:complexType>
+    <xs:complexType name="social_connections">
+        <xs:sequence>
+        <xs:element name= "service" type="service" minOccurs="6" maxOccurs="6"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="settings">
+        <xs:sequence>
+            <xs:element name="my_profile" type="my_profile"/>
+            <xs:element name="my_account" type="my_account"/>
+            <xs:element name="display_preferences" type="display_preferences"/>
+            <xs:element name="privacy" type="privacy"/>
+            <xs:element name="email_notifications" type="email_notifications"/>   
+            <xs:element name="my_gear" type="my_gear"/>   
+            <xs:element name="my_apps" type="my_apps"/>   
+            <xs:element name="social_connections" type="social_connections"/>        
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="settings" type="settings"/>
 </xs:schema>

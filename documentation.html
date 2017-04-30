@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<!-- Vrettos Georgios 
+This HTML File contains the documentation of the project -->
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -17,7 +20,15 @@
         #mainHeader {
             text-align: center;
         }
-
+        
+        button {
+            cursor: pointer;
+        }
+        
+        #up {
+            text-align: right;
+        }
+        
         footer {
             text-align: center;
         }
@@ -26,8 +37,9 @@
 </head>
 <body style="background-color: burlywood">
     <header id="mainHeader">
-        <h1><b>Documentation of Project Application Settings/Preferences</b></h1>
-        <p>This site is created as a documentation of the Final Project. This is a template, depicting how the documentation site will be organized. </p>
+        <h1><b>Documentation of Strava Application Settings</b>
+            <img src="http://blackseateam.ru/images/stravalogo.png"/>
+        </h1>
     </header>
     <hr>
     <main id="articleMain">
@@ -64,56 +76,141 @@
 
             <section id="introduction">
                 <h2><strong>Introduction</strong></h2>
-                <p>Some words about <b><i>introduction</i></b></p>
+                <p>This site contains all the information about the project for the course "Markup Languages".
+                     The topic is about an application's settings. In my example, I used an application called "Strava"
+                     which is basically a social sport activity tracker. The project consists of an XML file which describes
+                     the settings of the application. There is also an XML Schema file for validation purposes and and an XSLT file
+                     for transformation of the XML to JSON format. Finally, the JSON output file is also included.
+                </p>
             </section>
             <section id="methodology">
                 <h2><strong>Methodology</strong></h2>
-                <p>Some words about <b><i>methodology</i></b></p>
+                <p>
+                    As mentioned earlier the methodologies that are used are the following:
+                    <table>
+                    <tr>
+                        <th>Technology</th>
+                        <th>Purpose</th>
+                    </tr>
+                    <tr>
+                        <td>XML</td>
+                        <td>As a description language, i used XML in order to organize the data as clear as possible</td>
+                    </tr>
+                    <tr>
+                        <td>XML Schema</td>
+                        <td>The main purpose of this technology is to check if the XML file is organized well and according to the rules </td>
+                    </tr>
+                    <tr>
+                        <td>XSL</td>
+                        <td>XSL is used for transformation of the XML file to other forms like HTML or JSON</td>
+                    </tr>
+                    <tr>
+                        <td>JSON</td>
+                        <td>JSON, like XML is an easy way to display data in an organized way, easily readable by the user but also easy manageable by programming languages</td>
+                    </tr>
+                    </table>
+                </p>
+                <p>
+                    In the following table, are listed the platforms that were used for the implementation of the project:
+                    <table>
+                    <tr>
+                        <th>Platform</th>
+                        <th>Purpose</th>
+                    </tr>
+                    <tr>
+                        <td>Netbeans IDE</td>
+                        <td>A development software used for the creation and debugging of all the necessary files</td>
+                    </tr>
+                    <tr>
+                        <td>Git/Git hub</td>
+                        <td>The version control system that is used for better control of the project. GitHub is a service that is used for git repository storage and management</td>
+                    </tr>
+                    </table>
+                </p>
             </section>
             <section id="work">
                 <h2><strong>Work content</strong></h2>
-                <p>Some words about <b><i>work content</i></b></p>
-                <div id=workTable>
-                <table>
-                    <tr>
-                        <th>Example</th>
-                        <th>Description</th>
-                    </tr>
-                    <tr>
-                        <td>ex1</td>
-                        <td>d-ex1</td>
-                    </tr>
-                    <tr>
-                        <td>ex2</td>
-                        <td>d-ex2</td>
-                    </tr>
-                    <tr>
-                        <td>ex3</td>
-                        <td>d-ex3</td>
-                    </tr>
-                </table>
-                </div>
+                <p>The following files contain all the project material:</p>
+                <a href="settings.xml"><button>settings.xml</button></a>
+                <a href="settings.xsd"><button>settings.xsd</button></a>
+                <a href="settings.xsl"><button>settings.xsl</button></a>
+                <a href="settings.json"><button>settings.json</button></a>
             </section>
             <section id="elements">
                 <h2><strong>Element description</strong></h2>
-                <p>Some words about <b><i>element description</i></b></p>
+                <p>
+                    Some basic elements that were used in the XML File are:
+                </p>
+                <p>
+                <ul>
+                    <li>
+                        <b>my_profile</b> : This element contains tags that refer to profile settings. 
+                        Some of them are: photos, name, birthday, gender, location, weight, url, bio. 
+                        There are also sub elements with some attributes i.e. photo IDs and sizes.
+                    </li>
+                    <li>
+                        <b>my_account</b> : This element contains tags that refer to account settings. 
+                        Some of them are: member_since, membership_status, year, month, day. Some of these
+                         elements can only take specific values such as Free/Premium.
+                    
+                    </li>
+                    <li>
+                        <b>display_preferences</b> : This element contains tags that refer to display preferences.
+                         Some of these elements are: units, default_sport, default_highlight_image. Again, some of these subelements
+                         must have a specific string value such as Kilometers and Kilograms/Miles and Pounds.
+                    </li>
+                    <li>
+                        <b>privacy</b> : This element contains tags that refer to privacy settings.
+                         Some of them are: enhaced_privacy, flyby_visibility, log_visibility, hidden_locations, private_activities
+                         , hidden_from_leaderboards, data_usage. Most of these elements must have specific values such as on/off or Everybody/Nobody.
+                         The element hidden_locations contains sub elements of location type, each one of them having a specific ID as attribute.
+                    </li>
+                    <li>
+                        <b>email_notifications</b> : This element contains tags that refer to email and notification settings.
+                         Some of them are: club_email, social_email, segment_email, newsletter, language. These elements also must have a value such as on/off
+                          or a language string.
+                    </li>
+                    <li>
+                        <b>my_gear</b> : This element contains tags that refer to the user's gear. First sub elements are my_bikes and my_shoes.
+                         Each of these elements contain subelements of bike or shoe type with specific attributes such as ID, status. There are also 
+                         sub elements like name and kilometers in each category.
+                    </li>
+                    <li>
+                        <b>my_apps</b>: This elements contains sub elements of the type app. Each one of them is a specific app that is connected with
+                        the Strava account. Some attributes are app_id and access. The only sub element is the element name.
+                    </li>
+                    <li>
+                        <b>social_connections</b>: Finally, this element contains all the services that are connected with the Strava account. It contains
+                        many sub elements with the type of service. There are some attributes like service_id and service_status that can only take specific values.
+                        There are two sub elements of each element service. These are name and icon. Icon element also has attributes such as id and size. 
+                    </li>
+                    
+                </ul>
+                For practical reasons not every element is listed above.
+                    
+                </p>
             </section>
             <section id="transformation">
                 <h2><strong>Transformation description</strong></h2>
-                <p>Some words about <b><i>transformation description</i></b></p>
+                <p>Transformation was used to transform my XML document to a JSON one. </p>
+                <p>
+                    The XSL file contains some info and descriptions on how the file is supposed to transform.
+                    I use items like [] for tables,{} for objects and "":"" for element-value combos. We can access 
+                    element or attribute content using <b>xsl:value-of select=""</b>. I use <b>xsl:for-each</b> to loop into elements with many subelements
+                    if the same type. I also use <b>xsl:if test="position() != last()"</b> after every loop in order to automatically decide if a comma(,) is needed.
+                </p>
             </section>
             <section id="conclusion">
                 <h2><strong>Conclusion</strong></h2>
-                <p>Some words about <b><i>conclusion</i></b></p>
-                <p>To conclude i would like to ......</p>
+                <p>To conclude, I believe that this project is a good example for XML creation, Validation and Transformation into other types of Markup Languages. </p>
             </section>
-
             <aside>
-                <pre>Some other info concerning the project....</pre>
+                <pre>Thank you for reading so far...</pre>
+                <div id="up"><a href="#mainHeader"><img src="https://www.uni.edu/ssi/uni_blocks_antares/images/up_arrow.png" alt=""/></a></div>
             </aside>
             <footer>
                 <div id="articleFooter">
-                <mark style="background-color: cyan">This Project is implemented by <var>Georgios Vrettos</var></mark>
+                    <mark style="background-color: cyan">This Project is implemented by <var>Georgios Vrettos</var></mark>  <a href="https://github.com/Vrettel/Markup-Languages-Project"><img src="https://github.uconn.edu/favicon-enterprise.ico"/></a>
                 </div>
             </footer>
         </article>
